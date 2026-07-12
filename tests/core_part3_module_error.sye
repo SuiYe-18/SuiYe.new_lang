@@ -1,0 +1,2 @@
+# Expected to fail and print module stack diagnostics
+import Missing_For_Stack_Test.dll

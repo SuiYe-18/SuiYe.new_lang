@@ -1,0 +1,19 @@
+# Industrial baseline DLL capability test
+println "industrial-baseline-start"
+import Crypto.dll
+import SystemInfo.dll
+import FileSystem.dll
+import Csv.dll
+import Json.dll
+import Regex.dll
+
+Crypto.sha256 "abc"
+SystemInfo.sysinfo
+FileSystem.file_exists "bin\\suiye.exe"
+write "tests\\industrial.csv" "a,b\n1,2\n"
+Csv.csv_info "tests\\industrial.csv"
+Json.json_get "{\"name\":\"SuiYe\",\"kind\":\"language\"}" "kind"
+Regex.match "hello suiye" "suiye"
+Crypto.industrial_status
+delete "tests\\industrial.csv"
+println "industrial-baseline-end"

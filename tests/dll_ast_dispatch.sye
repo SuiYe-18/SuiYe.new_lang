@@ -1,0 +1,19 @@
+# AST Runtime DLL dispatch and ABI check
+println "dll-dispatch-start"
+import GUI.dll
+import Math.dll
+import Crypto.dll
+import Http.dll
+import Sqlite.dll
+import Network.dll
+
+GUI.echo "hello-from-ast"
+Math.add 2 3 5
+Crypto.sha1 "abc"
+Http.url_parse "https://example.com/path"
+Sqlite.sqlite_open "tests\\demo.db"
+Network.ping "localhost"
+modules
+commands GUI
+delete "tests\\demo.db"
+println "dll-dispatch-end"

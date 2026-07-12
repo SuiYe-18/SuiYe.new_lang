@@ -1,0 +1,2 @@
+# Expected to fail while include stack is active
+include "tests\\core_part3_active_include_payload.sye"

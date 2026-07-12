@@ -1,0 +1,34 @@
+# Core interpreter part 3 AST runtime diagnostics and standard library script
+println "core-part3-start"
+
+include "tests\\core_part3_include.sye"
+println $included_value
+call included_add 4 6
+print "include-return="
+println $_
+
+write "tests\\part3_tmp.txt" "alpha"
+append "tests\\part3_tmp.txt" "-beta"
+read "tests\\part3_tmp.txt" file_text
+println $file_text
+exists "tests\\part3_tmp.txt" file_exists
+println $file_exists
+delete "tests\\part3_tmp.txt"
+
+mkdir "tests\\part3_dir"
+exists "tests\\part3_dir" dir_exists
+println $dir_exists
+rmdir "tests\\part3_dir"
+
+now current_time
+typeof $current_time time_type
+println $time_type
+random random_value
+typeof $random_value random_type
+println $random_type
+
+import GUI.dll
+modules
+commands GUI
+
+println "core-part3-end"

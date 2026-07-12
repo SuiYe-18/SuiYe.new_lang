@@ -1,0 +1,53 @@
+# 100 percent self-research dedicated capability test
+println "self-research-100-start"
+import Icon_icos.dll
+import Image.dll
+import Chart.dll
+import String.dll
+import Math.dll
+import SSLCertificate.dll
+import DataFrame.dll
+import Xml.dll
+import Yaml.dll
+import Sqlite.dll
+import Archive.dll
+import WebView.dll
+import Audio.dll
+import Video.dll
+import Crypto.dll
+
+Icon_icos.icon_make "tests\\made.ico"
+Icon_icos.ico_info "tests\\made.ico"
+Chart.chart_bar "tests\\chart.svg" 10 40 80
+String.string_replace "hello suiye" "suiye" "world"
+Math.math_stats 1 2 3 4
+SSLCertificate.cert_sui "tests\\self.suicert" "SuiYe.local"
+write "tests\\df.csv" "a,b\n1,2\n3,4\n"
+DataFrame.dataframe_sum "tests\\df.csv"
+Xml.xml_get "<root><name>SuiYe</name></root>" "name"
+Yaml.yaml_get "name: SuiYe\nkind: lang" "kind"
+
+Sqlite.sqlite_open "tests\\native100.suidb"
+Sqlite.db_insert "tests\\native100.suidb" "users" "1,Alice"
+write "tests\\native100_file.txt" "native100 archive data"
+Archive.archive_pack "tests\\native100.sya" "tests\\native100_file.txt"
+Sqlite.db_count "tests\\native100.suidb" "users"
+Sqlite.db_delete_table "tests\\native100.suidb" "users"
+Archive.archive_extract_text "tests\\native100.sya" "native100_file.txt"
+WebView.webview_component "Title" "Body" "tests\\component.html"
+Audio.wav_tone "tests\\tone.wav"
+Audio.wav_info "tests\\tone.wav"
+Video.video_hash "bin\\suiye.exe"
+Crypto.crypto_xor "abc" "k"
+Crypto.native_status
+
+delete "tests\\made.ico"
+delete "tests\\chart.svg"
+delete "tests\\self.suicert"
+delete "tests\\df.csv"
+delete "tests\\component.html"
+delete "tests\\tone.wav"
+delete "tests\\native100.suidb"
+delete "tests\\native100.sya"
+delete "tests\\native100_file.txt"
+println "self-research-100-end"

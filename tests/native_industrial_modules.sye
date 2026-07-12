@@ -1,0 +1,33 @@
+# Fully self-developed SuiYe-native module test
+println "native-industrial-start"
+import Crypto.dll
+import Sqlite.dll
+import Archive.dll
+import WebView.dll
+import Audio.dll
+import Video.dll
+import Http.dll
+import Network.dll
+
+Crypto.native_status
+Crypto.sha256 "abc"
+
+Sqlite.sqlite_open "tests\\native.suidb"
+Sqlite.db_insert "tests\\native.suidb" "users" "1,Alice"
+Sqlite.db_insert "tests\\native.suidb" "users" "2,Bob"
+Sqlite.db_select "tests\\native.suidb" "users"
+
+write "tests\\native_file.txt" "native archive data"
+Archive.archive_pack "tests\\native.sya" "tests\\native_file.txt"
+Archive.archive_list "tests\\native.sya"
+
+Http.url_parse "http://example.com:8080/path"
+Network.ping "localhost"
+Video.video_info "bin\\suiye.exe"
+Audio.video_info "bin\\suiye.exe"
+WebView.native_status
+
+delete "tests\\native_file.txt"
+delete "tests\\native.sya"
+delete "tests\\native.suidb"
+println "native-industrial-end"

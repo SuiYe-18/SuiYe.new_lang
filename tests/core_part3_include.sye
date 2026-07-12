@@ -1,0 +1,6 @@
+# Included by core_part3_ast_runtime.sye
+let included_value = "include-ok"
+
+func included_add a b {
+    return $a + $b
+}

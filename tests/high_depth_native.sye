@@ -1,0 +1,27 @@
+# High-depth SuiYe-native upgrade test
+println "high-depth-start"
+import Sqlite.dll
+import Http.dll
+import Crypto.dll
+import Video.dll
+
+Sqlite.sqlite_open "tests\\high.suidb"
+Sqlite.db_insert "tests\\high.suidb" "users" "1,Alice,admin"
+Sqlite.db_insert "tests\\high.suidb" "users" "2,Bob,user"
+Sqlite.db_where "tests\\high.suidb" "users" "Alice"
+Sqlite.db_update "tests\\high.suidb" "users" "Bob" "2,Bob,editor"
+Sqlite.db_where "tests\\high.suidb" "users" "editor"
+Sqlite.db_export_csv "tests\\high.suidb" "users" "tests\\high_users.csv"
+
+Http.http_build_request "GET" "http://example.com:8080/path"
+Http.http_status_parse "HTTP/1.0 200 OK"
+
+Crypto.crypto_random 24
+Crypto.crypto_hmac_sui "payload" "secret"
+
+Video.video_format "bin\\suiye.exe"
+Video.video_scan_signature "bin\\suiye.exe"
+
+delete "tests\\high.suidb"
+delete "tests\\high_users.csv"
+println "high-depth-end"

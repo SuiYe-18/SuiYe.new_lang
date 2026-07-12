@@ -1,0 +1,2 @@
+# This file fails during include execution
+throw "include-stack-check"

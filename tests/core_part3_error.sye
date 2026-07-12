@@ -1,0 +1,3 @@
+# Expected to fail and print call/include stack diagnostics
+include "tests\\core_part3_error_include.sye"
+call explode

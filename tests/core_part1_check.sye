@@ -1,0 +1,35 @@
+# Core interpreter part 1 check script
+const title = "CorePart1"
+let number = 10 + 20 * 3
+let enabled = true
+let nothing = null
+
+func make_counter start {
+    let local_value = $start
+    func inner step {
+        set local_value = $local_value + $step
+        return $local_value
+    }
+    return "closure-ready"
+}
+
+if $enabled {
+    println $title
+} else {
+    println "disabled"
+}
+
+for i in 1 3 {
+    println $i
+}
+
+try {
+    throw "test"
+} catch {
+    println "caught"
+}
+
+array items "a" "b"
+map object
+put object name "SuiYe"
+json "quoted \" text" escaped

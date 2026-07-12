@@ -1,0 +1,42 @@
+{
+  "scopeName": "source.suiye",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#keywords" },
+    { "include": "#moduleCommands" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        { "name": "comment.line.number-sign.suiye", "match": "#.*$" },
+        { "name": "comment.line.double-slash.suiye", "match": "//.*$" }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        { "name": "string.quoted.double.suiye", "begin": "\"", "end": "\"", "patterns": [{ "name": "constant.character.escape.suiye", "match": "\\\\." }] }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        { "name": "constant.numeric.suiye", "match": "\\b[0-9]+(\\.[0-9]+)?\\b" }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        { "name": "keyword.control.suiye", "match": "\\b(if|else|while|repeat|for|break|continue|try|catch|throw|return)\\b" },
+        { "name": "keyword.declaration.suiye", "match": "\\b(let|const|set|unset|func|import|use|load|include|export)\\b" },
+        { "name": "support.function.suiye", "match": "\\b(print|println|input|sleep|system|pwd|cd|mkdir|rmdir|delete|exists|read|write|save|append|now|random|typeof|len|upper|lower|array|push|at|pop|map|put|get|json|modules|commands|assert)\\b" },
+        { "name": "constant.language.suiye", "match": "\\b(true|false|null)\\b" },
+        { "name": "keyword.operator.suiye", "match": "\\b(and|or|not)\\b" }
+      ]
+    },
+    "moduleCommands": {
+      "patterns": [
+        { "name": "entity.name.function.module.suiye", "match": "\\b[A-Za-z_][A-Za-z0-9_]*\\.[A-Za-z_][A-Za-z0-9_]*\\b" }
+      ]
+    }
+  }
+}

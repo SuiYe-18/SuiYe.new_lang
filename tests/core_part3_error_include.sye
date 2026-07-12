@@ -1,0 +1,4 @@
+# Included by core_part3_error.sye
+func explode {
+    throw "part3-stack-check"
+}

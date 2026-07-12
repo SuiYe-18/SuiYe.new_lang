@@ -1,0 +1,26 @@
+{
+  "name": "suiye-language",
+  "displayName": "SuiYe Language",
+  "description": "Syntax highlighting for SuiYe .sye scripts",
+  "version": "0.1.0",
+  "publisher": "SuiYe_TR",
+  "engines": { "vscode": "^1.80.0" },
+  "categories": ["Programming Languages"],
+  "contributes": {
+    "languages": [
+      {
+        "id": "suiye",
+        "aliases": ["SuiYe", "suiye"],
+        "extensions": [".sye"],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "suiye",
+        "scopeName": "source.suiye",
+        "path": "./syntaxes/suiye.tmLanguage.json"
+      }
+    ]
+  }
+}

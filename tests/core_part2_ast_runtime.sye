@@ -1,0 +1,54 @@
+# Core interpreter part 2 AST runtime script
+println "core-part2-start"
+
+let enabled = true
+let empty = null
+typeof $enabled enabled_type
+println $enabled_type
+typeof $empty empty_type
+println $empty_type
+
+let base = 10
+func add_pair a b {
+    let local_sum = $a + $b
+    return $local_sum
+}
+call add_pair 7 8
+print "return="
+println $_
+typeof $local_sum local_sum_type
+println $local_sum_type
+
+if $enabled and not false {
+    println "bool-ok"
+} else {
+    println "bool-fail"
+}
+
+array items "red" "green"
+push items "blue"
+len $items items_len
+println $items_len
+at items 2 picked
+println $picked
+
+map person
+put person name "SuiYe"
+put person kind "language"
+get person kind kind_value
+println $kind_value
+
+for i in 1 3 {
+    print "i="
+    println $i
+}
+
+try {
+    throw "handled"
+} catch {
+    println "catch-ok"
+}
+
+json $kind_value kind_json
+println $kind_json
+println "core-part2-end"
