@@ -1,0 +1,36 @@
+# SuiYe demonstration script
+println "Hello SuiYe"
+let name = "中文与 English"
+println $name
+let a = 7
+let b = 5
+println $a + $b
+
+if $a > $b {
+    println "a is greater than b"
+}
+else {
+    println "b is greater or equal"
+}
+
+repeat 3 {
+    print "repeat index="
+    println $_
+}
+
+func greet who {
+    print "Hi "
+    println $who
+    return "ok"
+}
+call greet "Developer"
+
+now current_time
+println $current_time
+typeof $current_time current_type
+println $current_type
+
+import GUI.dll
+GUI.info
+GUI.echo "module call works"
+GUI.gui "examples/generated_gui.html"

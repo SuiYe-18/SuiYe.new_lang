@@ -1,0 +1,30 @@
+# Regression script for the fifth SuiYe improvement pass
+println "round5-start"
+
+let expr1 = 2 + 3 * 4
+println $expr1
+
+let expr2 = ( 2 + 3 ) * 4
+println $expr2
+
+let expr3 = not 0
+println $expr3
+
+if $expr1 == 14 and $expr2 == 20 {
+    println "precedence-ok"
+} else {
+    println "precedence-fail"
+}
+
+let gate = 0
+if $gate {
+    println "inline-else-fail"
+} else {
+    println "inline-else-ok"
+}
+
+import GUI.dll
+modules
+commands GUI
+
+println "round5-end"

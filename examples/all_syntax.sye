@@ -1,0 +1,99 @@
+# Complete syntax regression for SuiYe
+println "all-syntax-start"
+
+const title = "SuiYe"
+let n = 2 + 3 * 4
+println $n
+set n = ( $n + 6 ) / 2
+println $n
+export n
+
+if $n == 10 {
+    println "if-ok"
+} else {
+    println "if-fail"
+}
+
+let w = 0
+while $w < 2 {
+    print "while="
+    println $w
+    set w = $w + 1
+}
+
+repeat 2 {
+    print "repeat="
+    println $_
+}
+
+for i 1 3 {
+    print "for="
+    println $i
+}
+
+func hello who {
+    print "func="
+    println $who
+    return "done"
+}
+call hello "ok"
+
+try {
+    throw "catched"
+} catch {
+    println "catch-ok"
+}
+
+array arr "red" "green"
+push arr "blue"
+at arr 1 picked
+println $picked
+pop arr last
+println $last
+
+map person
+put person name "SuiYe"
+put person type "language"
+get person type person_type
+println $person_type
+
+json $person_type person_json
+println $person_json
+
+typeof $person_type person_typeof
+println $person_typeof
+len $person_type person_len
+println $person_len
+upper $person_type person_upper
+println $person_upper
+lower $person_upper person_lower
+println $person_lower
+
+now current_time
+typeof $current_time current_time_type
+println $current_time_type
+random random_value
+typeof $random_value random_type
+println $random_type
+
+write "examples/all_syntax_tmp.txt" "file-ok"
+append "examples/all_syntax_tmp.txt" "-append"
+read "examples/all_syntax_tmp.txt" file_content
+println $file_content
+exists "examples/all_syntax_tmp.txt" file_exists
+println $file_exists
+delete "examples/all_syntax_tmp.txt"
+
+mkdir "examples/all_syntax_dir"
+cd "examples/all_syntax_dir"
+pwd
+cd ".."
+rmdir "all_syntax_dir"
+
+import GUI.dll
+modules
+commands GUI
+GUI.echo "module-ok"
+
+unset person_typeof
+println "all-syntax-end"

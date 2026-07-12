@@ -1,0 +1,13 @@
+# Loop text output test for direct run, packing, and reverse parsing
+println "SuiYe loop text test started"
+
+let count = 1
+while 1 {
+    print "loop "
+    print $count
+    print " | "
+    now current_time
+    println $current_time
+    set count = $count + 1
+    sleep 3000
+}

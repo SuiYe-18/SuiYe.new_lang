@@ -1,0 +1,5 @@
+write "examples/out.txt" "SuiYe file write works"
+read "examples/out.txt" content
+println $content
+exists "examples/out.txt" has_file
+println $has_file
